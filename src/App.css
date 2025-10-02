@@ -1,0 +1,227 @@
+#root,body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: bisque;
+}
+
+#header{
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+.blue-dot{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: rgb(73, 73, 164);
+}
+
+#leftSide{
+  /* background-color: rgb(234, 83, 83); */
+  width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.blue-dot, .name, .subtext-header{
+  margin: 0 .3rem;
+}
+
+#rightSide{
+  /* background-color: rgb(212, 97, 212); */
+  width: 600px;
+}
+#rightSide ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  list-style-type: none;
+}
+#rightSide ul li{
+  padding-right: 1rem ;
+  margin: 0 10px;
+  border-right: 2px solid black;
+}
+#rightSide ul li a{
+  text-decoration: none;
+}
+#rightSide ul li a:hover{
+  opacity: 0.8;
+}
+
+#main-content{
+  /* background-color: #4f09c7; */
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  min-height: calc(100vh - 50px);
+}
+.center-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-container{
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.image-detail{
+  width: 100%;
+  border-radius: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+}
+.content{
+  color: black;
+  width: 500px;
+  margin-left: 1rem;
+  /* position: relative; */
+}
+
+.below-center-content{
+  /* background-color: yellow; */
+}
+.below-center-content ul{
+  display: flex;
+  list-style-type: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0 !important;
+  font-weight: 700;
+}
+.below-center-content ul li{
+  background-color: #c03434;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0 .5rem;
+  text-align: center;
+  line-height: 5rem;
+}
+.below-center-content ul li a{
+  text-decoration: none;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #99c7e5;
+  border-radius: 12px;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.close-btn:hover{
+  background-color: red;
+}
+
+/* ==============================
+   📱 Mobile nhỏ (max-width: 320px)
+   ============================== */
+@media screen and (max-width: 320px) {
+  #header {
+    flex-direction: column;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  #leftSide {
+    width: 100%;
+    justify-content: center;
+  }
+  #rightSide {
+    width: 100%;
+  }
+  #rightSide ul {
+    flex-direction: column;
+    padding: 0;
+  }
+  #main-content {
+    flex-direction: column;
+  }
+  .content {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+  .below-center-content ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Toggle button (ẩn mặc định) */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Menu mặc định */
+#rightSide .menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+
+/* Ẩn menu ngang, chỉ hiện toggle */
+@media screen and (max-width: 768px) {
+  #rightSide .menu {
+    display: none; /* menu ẩn đi */
+  }
+
+  .menu-toggle {
+    display: block; /* hiện nút toggle bên phải */
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.below-center-content ul li.active {
+  border: 3px solid lightgoldenrodyellow;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.below-center-content ul li.active a {
+  color: white;
+  font-weight: bold;
+}
+
