@@ -60,7 +60,7 @@ function App() {
           <div className="content">
             <h1>Danh Thượng</h1>
             <h5>A Bit About Me</h5>
-            <p><i>Mình là Thượng, 1 software developer lỏ kẹc chưa tốt nghiệp, đang tìm kiếm công việc phù hợp với kĩ năng lập trình của mình. Đây là một dự án portfolio nho nhỏ để giới thiệu bản thân mình.</i></p>
+            <p class="infor-detail"><i>Mình là Thượng, 1 software developer lỏ kẹc chưa tốt nghiệp, đang tìm kiếm công việc phù hợp với kĩ năng lập trình của mình. Đây là một dự án portfolio nho nhỏ để giới thiệu bản thân mình.</i></p>
           </div>
 
           <ul>
